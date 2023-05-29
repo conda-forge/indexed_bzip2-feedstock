@@ -40,7 +40,8 @@ about:
   license: MIT
   license_family: MIT
   license_file:
-    - LICENSE
+    - LICENSE-MIT
+    - LICENSE-APACHE
     - THIRDPARTY.yml
 
 extra:
