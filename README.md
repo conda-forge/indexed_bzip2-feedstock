@@ -1,11 +1,11 @@
-About indexed_bzip2
-===================
+About indexed_bzip2-feedstock
+=============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/indexed_bzip2-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/mxmlnkn/indexed_bzip2
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/indexed_bzip2-feedstock/blob/main/LICENSE.txt)
 
 Summary: Fast random access to bzip2 files
 
