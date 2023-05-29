@@ -2,7 +2,7 @@
 root_name: indexed_bzip2
 third_party_libraries:
   - package_name: cxxopts
-    package_version: 2.2.1
+    package_version: 3.1.1
     license: MIT
     licenses:
       - license: MIT
