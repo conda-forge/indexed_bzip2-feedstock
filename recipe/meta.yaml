@@ -11,18 +11,20 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   entry_points:
     - ibzip2 = indexed_bzip2:cli
 
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - sysroot_linux-64 2.17  # [linux64]
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
-    - cython
+    - setuptools >=46.4.0
+    - wheel
+    - cython >=0.29.24
   run:
     - python
 
