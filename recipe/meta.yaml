@@ -22,7 +22,9 @@ requirements:
   host:
     - python
     - pip
-    - cython
+    - setuptools >=46.4.0
+    - wheel
+    - cython >= 0.29.24
   run:
     - python
 
