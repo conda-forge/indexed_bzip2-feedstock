@@ -144,7 +144,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-indexed_bzip2-green.svg)](https://anaconda.org/conda-forge/indexed_bzip2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/indexed_bzip2.svg)](https://anaconda.org/conda-forge/indexed_bzip2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/indexed_bzip2.svg)](https://anaconda.org/conda-forge/indexed_bzip2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/indexed_bzip2.svg)](https://anaconda.org/conda-forge/indexed_bzip2) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-indexed__bzip2-green.svg)](https://anaconda.org/conda-forge/indexed_bzip2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/indexed_bzip2.svg)](https://anaconda.org/conda-forge/indexed_bzip2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/indexed_bzip2.svg)](https://anaconda.org/conda-forge/indexed_bzip2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/indexed_bzip2.svg)](https://anaconda.org/conda-forge/indexed_bzip2) |
 
 Installing indexed_bzip2
 ========================

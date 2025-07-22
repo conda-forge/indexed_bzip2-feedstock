@@ -1,17 +1,17 @@
 {% set name = "indexed_bzip2" %}
-{% set version = "1.6.0" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dc75228a0651f75fe76ce00c3ae48719c3edaa49046a3dd57a9c8c86628e1e92
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 3fcdf8edf5d846c17d7200c024d447581a0723b55746d6fdcc610856ac33d42b
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
   entry_points:
     - ibzip2 = indexed_bzip2:cli
 
