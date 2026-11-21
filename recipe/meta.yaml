@@ -1,5 +1,5 @@
 {% set name = "indexed_bzip2" %}
-{% set version = "1.7.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,24 +7,29 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3fcdf8edf5d846c17d7200c024d447581a0723b55746d6fdcc610856ac33d42b
+  sha256: db9698003d8af760ccfb7d4708d43582cccc0bfc226ce8218f1cd1de7525ca86
+  patches:
+    # Link the conda-forge libsais package instead of the vendored copy.
+    - use-system-libs.patch
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
   entry_points:
     - ibzip2 = indexed_bzip2:cli
 
 requirements:
   build:
+    - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
   host:
     - python
     - pip
-    - setuptools >=46.4.0
+    - setuptools >=61.2,<85
     - wheel
-    - cython >=0.29.24
+    - cython >=3.0,<4
+    - libsais >=2.12.2
   run:
     - python
 
@@ -35,12 +40,12 @@ test:
     - pip
   commands:
     - pip check
+    - ibzip2 --help
 
 about:
-  home: https://github.com/mxmlnkn/indexed_bzip2
+  home: https://github.com/mxmlnkn/librapidarchive
   summary: Fast random access to bzip2 files
-  license: MIT
-  license_family: MIT
+  license: MIT OR Apache-2.0
   license_file:
     - LICENSE-MIT
     - LICENSE-APACHE

@@ -1,0 +1,42 @@
+--- a/setup.py
++++ b/setup.py
+@@ -34,7 +34,7 @@
+     'src/external/bzip2/bzlib.c',
+ ]
+ 
+-define_macros = [('LIBRAPIDARCHIVE_WITH_BZIP2_COMPRESSION', None)]
++define_macros = [('LIBRAPIDARCHIVE_WITH_BZIP2_COMPRESSION', None), ('LIBSAIS_SHARED', None)]
+ if withAbi3:
+     define_macros.append(('Py_LIMITED_API', abi3Version))
+ 
+@@ -42,10 +42,9 @@
+     Extension(
+         # fmt: off
+         name         = 'indexed_bzip2',
+-        sources      = ['indexed_bzip2.pyx', 'src/external/libsais_prefixed.c'] + bzip2_sources,
++        sources      = ['indexed_bzip2.pyx'] + bzip2_sources,
+         include_dirs = ['src', 'src/external', 'src/external/cxxopts/include',
+-                        'src/external/libsais/include', 'src/external/bzip2',
+-                        'src/external/bzip2_version'],
++                        'src/external/bzip2', 'src/external/bzip2_version'],
+         language     = 'c++',
+         define_macros = define_macros,
+         py_limited_api = withAbi3,
+@@ -114,6 +113,7 @@
+                 '-DWITH_PYTHON_SUPPORT',
+                 '-D_GLIBCXX_ASSERTIONS',
+             ]
++            ext.libraries = ['libsais'] if self.compiler.compiler_type == 'msvc' else ['sais']
+ 
+             if supportsFlag(self.compiler, '-flto=auto'):
+                 ext.extra_compile_args += ['-flto=auto']
+--- a/src/external/bzip2/blocksort.c
++++ b/src/external/bzip2/blocksort.c
+@@ -20,7 +20,6 @@
+ 
+ 
+ #include "bzlib_private.h"
+-#include "libsais_prefix.h"
+ #include "libsais.h"
+ 
+ /*---------------------------------------------*/
